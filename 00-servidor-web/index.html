@@ -4,8 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        /*ESTO ES CSS*/
+        /*Selector por id*/
+        #titulo-especial {
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-bottom: 5px;
+            margin-right: 50px;
+            margin: 10px 20px 30px 40px;
+        }
+
+        /*Selector por nombre de etiqueta*/
+        /*Se puede combinar los selecctores separados por comas*/
+        /*h1, h2, h3, #titulo-especial*/
+        h1, h2, h3, h4, h5, h6 {
+            margin: 10px;
+            padding: 10px 20px 30px 40px;
+            border: green solid 5px;
+            border-color: blueviolet;
+            border-width: 15px;
+            border-style: dashed;
+            border-radius: 2px 5px 10px 15px;
+        }
+
+
+
+    </style>
 </head>
 <body>
-    <h1>Hola Mundo!</h1>
+    <h1 id="titulo-especial" style="color: aqua; background-color: red;">Hola Assets!</h1>
+    <h2>Hola Assets!</h2>
+    <h3>Hola Assets!</h3>
+    <h4>Hola Assets!</h4>
+    <h5>Hola Assets!</h5>
+    <h6>Hola Assets!</h6>
+
+
+    <h2>Tablas y anclas</h1>
+    <ul>
+        <li><a href="index.html">
+            home
+        </a>
+    </li>
+        <li>
+            <a href="a-tablas-anclas.html">
+                Tablas y anclas
+            </a>
+        </li>
+    </ul>
+
+    <p>Links internos, se debe colocar "#" al inicio</p>
+    <ul>
+        <li><a href="#parrafo1">Ir parrafo 1</a></li>
+        <li><a href="#parrafo2">Ir parrafo 2</a></li>
+    </ul>
+
+    <p id="parrafo1">Parrafo 1</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p id="parrafo2">Parrafo 2</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h2>Imagenes</h2>
+    <img src="https://r-charts.com/es/miscelanea/procesamiento-imagenes-magick_files/figure-html/color-fondo-imagen-r.png" alt="Colibri de colores">
+
+    <table>
+        <tr> <!--Table row-->
+            <th> <!--Table header-->
+                Nombre
+            </th> 
+            <th>Apellidos</th>
+            <th>Nota</th>
+        </tr>
+        <tr>
+            <td> <!--Table detail-->
+                Adrian
+            </td>
+            <td>Eguez</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Martin</td>
+            <td>Posso</td>
+            <td>10</td>
+        </tr>
+    </table>
 </body>
 </html>

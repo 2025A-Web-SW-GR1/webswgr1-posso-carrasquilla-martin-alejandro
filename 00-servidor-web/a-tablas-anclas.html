@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .lista-ordenada-mayusculas {
+            list-style-type: upper-alpha; /* upper-alpha, lower-alpha, upper-roman, lower-roman */
+        }	
+        .lista-ordenada-romana {
+            list-style-type: upper-roman; /* upper-alpha, lower-alpha, upper-roman, lower-roman */
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Tablas y anclas</h1>
+    
+    <ul> <!--Unordered list-->
+        <li> <!-- List item-->
+            <a href="index.html"> <!--Anchor-->
+            home
+            </a>
+        </li>
+        <li>
+            <a href="a-tablas-anclas.html">
+                Tablas y anclas
+            </a>
+        </li>
+    </ul>
+
+    <ol class="lista-ordenada-mayusculas"> <!--Ordered list-->
+        <li>
+            Lunes
+            <ol class="lista-ordenada-romana">
+                <li>Desayunar</li>
+                <li>Dormir</li>
+            </ol>
+        </li>
+        <li>Martes</li>
+        <li>Miercoles</li>
+    </ol>
+
+</body>
+</html>
