@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Libre Ecuador - Envíos Gratis en el día</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="icon" href="./assets/images/mecadolibre-logo.png" type="image/png">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+    <!-- Barra de navegacion -->
+    <nav class="barra-navegacion navbar navbar-expand-lg py-1">
+        <div class="container d-flex px-4">
+            <!--Logo-->
+            <a href="#">
+                <img id="logo"
+                    src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.16.0/mercadolibre/logo__large.png"
+                    alt="Logo Mercado Libre">
+            </a>
+            <!-- Barra de búsqueda -->
+            <form id="seccion-busqueda" class="d-flex flex-grow-1 justify-content-center">
+                <input id="barra-busqueda" class="search-input" type="search"
+                    placeholder="Buscar productos, marcas y más..." aria-label="Buscar">
+                <button id="boton-lupa" class="nav-search-btn" type="submit"><img id="lupa"
+                        src="./assets/images/magnifying-glass-16.png" alt="Buscar"></button>
+            </form>
+
+            <a href="#">
+                <img id="envios-imagen" src="./assets/images/envios-gratis.png"
+                    alt="Envios gratis desde $10 a todo Ecuador">
+            </a>
+        </div>
+    </nav>
+    <nav class="barra-navegacion navbar navbar-expand-lg py-1">
+        <div class="container d-flex  px-4">
+            <!--Ubicacion-->
+            <button id="boton-ubicacion">
+                <div class="row">
+                    <div class="col-3"> <img class="icono" src="./assets/images/location-icon.png" alt=""></div>
+                    <div id="ciudad" class="col-6">Enviar a Quito</div>
+                </div>
+            </button>
+            <!--Menu de navegacion-->
+            <div class="menu-navegacion collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Categorías
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Celulares</a></li>
+                            <li><a class="dropdown-item" href="#">Electrodomésticos</a></li>
+                            <li><a class="dropdown-item" href="#">Hogar y Muebles</a></li>
+                            <li><a class="dropdown-item" href="#">Deportes y Fitness</a></li>
+                            <li><a class="dropdown-item" href="#">Belleza y Cuidado personal</a></li>
+                            <li><a class="dropdown-item" href="#">Herramientas</a></li>
+                            <li><a class="dropdown-item" href="#">Construcción</a></li>
+                            <li><a class="dropdown-item" href="#">Insdustrias y Oficinas</a></li>
+                            <li><a class="dropdown-item" href="#">Juegos y Juguetes</a></li>
+                            <li><a class="dropdown-item" href="#">Bebés</a></li>
+                            <li><a class="dropdown-item" href="#">Accesorios para Vehículos</a></li>
+                            <li><a class="dropdown-item" href="#">Salud y Equipamiento Médico</a></li>
+                            <li><a class="dropdown-item" href="#">Inmuebles</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Más vendidos</a></li>
+                            <li><a class="dropdown-item" href="#">Ver más categorías</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cupones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ofertas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tiendas oficiales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mercado Play</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Vender</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ayuda</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-navegacion collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Crea tu cuenta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ingresa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mis compras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><img class="icono" src="./assets/images/cart-icon.png"
+                                alt="Carrito"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="0" class=" active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://http2.mlstatic.com/D_NQ_902354-MLA84821289133_052025-OO.webp" class="d-block w-100"
+                    alt="Promo 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://http2.mlstatic.com/D_NQ_762204-MLA84512797517_052025-OO.webp" class="d-block w-100"
+                    alt="Promo 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://http2.mlstatic.com/D_NQ_925432-MLA84763721501_052025-OO.webp" class="d-block w-100"
+                    alt="Promo 3">
+            </div>
+            <div class="carousel-item">
+                <img src="https://http2.mlstatic.com/D_NQ_982401-MLA84411914378_052025-OO.webp" class="d-block w-100"
+                    alt="Promo 4">
+            </div>
+            <div class="carousel-item">
+                <img src="https://http2.mlstatic.com/D_NQ_619944-MLA84216228386_052025-OO.webp" class="d-block w-100"
+                    alt="Promo 5">
+            </div>
+            <div class="carousel-item">
+                <img src="https://http2.mlstatic.com/D_NQ_967723-MLA84513225213_052025-OO.webp" class="d-block w-100"
+                    alt="Promo 6">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Sección de tarjetas informativas-->
+    <div class="container-fluid container-informacion">
+        <div class="row justify-content-center d">
+            <a class="tarjeta-info col-sm-3" href="#">
+                <div>
+                    <div class="tarjeta-header">
+                        <h6>Ingresa a tu cuenta</h6>
+                    </div>
+                    <div class="tarjeta-body">
+                        <div><img class="img-ti"
+                                src="https://http2.mlstatic.com/frontend-assets/homes-palpatine/dynamic-access-desktop/registration-da.svg"
+                                alt="Ingresar cuenta"></div>
+                        <div>
+                            <p>Disfruta de ofertas y compra sin límites.</p>
+                        </div>
+                    </div>
+                    <div class="tarjeta-footer">Ingresa a tu cuenta.</div>
+                </div>
+            </a>
+            <a class="tarjeta-info col-sm-3" href="#">
+                <div>
+                    <div class="tarjeta-header">
+                        <h6>Medios de Pago</h6>
+                    </div>
+                    <div class="tarjeta-body">
+                        <div><img class="img-ti"
+                                src="https://http2.mlstatic.com/frontend-assets/homes-palpatine/dynamic-access-desktop/payment-methods.svg"
+                                alt="Medios de Pago"></div>
+                        <div>
+                            <p>Paga tus compras de forma rápida y segura.</p>
+                        </div>
+                    </div>
+                    <div class="tarjeta-footer">Conocer medios de pago</div>
+                </div>
+            </a>
+            <a class="tarjeta-info col-sm-3" href="#">
+                <div>
+                    <div class="tarjeta-header">
+                        <h6>Compra Protegida</h6>
+                    </div>
+                    <div class="tarjeta-body">
+                        <div><img class="img-ti"
+                                src="https://http2.mlstatic.com/frontend-assets/homes-palpatine/dynamic-access-desktop/buy-protected.svg"
+                                alt="Ingresar cuenta"></div>
+                        <div>
+                            <p>Puedes devolver tu compra gratis.</p>
+                        </div>
+                    </div>
+                    <div class="tarjeta-footer">Cómo funciona</div>
+                </div>
+            </a>
+            <a class="tarjeta-info col-sm-3" href="#">
+                <div>
+                    <div class="tarjeta-header">
+                        <h6>Más Vendidos</h6>
+                    </div>
+                    <div class="tarjeta-body">
+                        <div><img class="img-ti"
+                                src="https://http2.mlstatic.com/frontend-assets/homes-palpatine/dynamic-access-desktop/top-sale.svg"
+                                alt="Ingresar cuenta"></div>
+                        <div>
+                            <p>Explora los productos que son tendencia.</p>
+                        </div>
+                    </div>
+                    <div class="tarjeta-footer">Ir a Más vendidos</div>
+                </div>
+            </a>
+            <a class="tarjeta-info col-sm-3" href="#">
+                <div>
+                    <div class="tarjeta-header">
+                        <h6>Tiendas oficiales</h6>
+                    </div>
+                    <div class="tarjeta-body">
+                        <div><img class="img-ti"
+                                src="https://http2.mlstatic.com/frontend-assets/homes-palpatine/dynamic-access-desktop/store-official.svg"
+                                alt="Ingresar cuenta"></div>
+                        <div>
+                            <p>Encuentra tus marcas preferidas.</p>
+                        </div>
+                    </div>
+                    <div class="tarjeta-footer">Mostrar tiendas</div>
+                </div>
+            </a>
+            <a class="tarjeta-info col-sm-3" href="#">
+                <div>
+                    <div class="tarjeta-header">
+                        <h6>Zapatillas</h6>
+                    </div>
+                    <div class="tarjeta-body">
+                        <div><img class="img-ti"
+                                src="https://http2.mlstatic.com/frontend-assets/homes-palpatine/dynamic-access-desktop/shoes-category.svg"
+                                alt="Ingresar cuenta"></div>
+                        <div>
+                            <p>Encuentra el estilo que se adapta a ti.</p>
+                        </div>
+                    </div>
+                    <div class="tarjeta-footer">Buscar Zapatillas</div>
+                </div>
+            </a>
+            <a class="tarjeta-info col-sm-3" href="#">
+                <div>
+                    <div class="tarjeta-header">
+                        <h6>Celulares y teléfonos</h6>
+                    </div>
+                    <div class="tarjeta-body">
+                        <div><img class="img-ti"
+                                src="https://http2.mlstatic.com/frontend-assets/homes-palpatine/dynamic-access-desktop/cellphones-category.svg"
+                                alt="Ingresar cuenta"></div>
+                        <div>
+                            <p>Descubre celulares que son tendencia.</p>
+                        </div>
+                    </div>
+                    <div class="tarjeta-footer">Ir a Celulares</div>
+                </div>
+            </a>
+            <a class="tarjeta-info col-sm-3" href="#">
+                <div>
+                    <div class="tarjeta-header">
+                        <h6>Nuestras categorias</h6>
+                    </div>
+                    <div class="tarjeta-body">
+                        <div><img class="img-ti"
+                                src="https://http2.mlstatic.com/frontend-assets/homes-palpatine/dynamic-access-desktop/categories.svg"
+                                alt="Ingresar cuenta"></div>
+                        <div>
+                            <p>Encuentra celulares, ropa, inmuebles y más.</p>
+                        </div>
+                    </div>
+                    <div class="tarjeta-footer">Ir a categorías</div>
+                </div>
+            </a>
+            <a class="tarjeta-info col-sm-3" href="#">
+                <div>
+                    <div class="tarjeta-header">
+                        <h6>¿Necesitas ayuda?</h6>
+                    </div>
+                    <div class="tarjeta-body">
+                        <div><img class="img-ti"
+                                src="https://http2.mlstatic.com/frontend-assets/homes-palpatine/dynamic-access-desktop/help-da.svg"
+                                alt="Ingresar cuenta"></div>
+                        <div>
+                            <p>Resuelve tus dudas sobre compras o ventas.</p>
+                        </div>
+                    </div>
+                    <div class="tarjeta-footer">Ir a Ayuda</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!--Seccion Mercado Play-->
+    <div class="container video-banner-container">
+        <div class="row">
+            <div class="mercadoplay-left-body col-sm-6">
+                <a href="#">
+                    <div><img id="logo-mercadoplay"
+                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/images/touchpoint_trailer/logo-mercado-play-v3.png"
+                            alt="logo mercadoplay"></div>
+                    <div>
+                        <h5>¡Series y películas <br> también en TV!</h5>
+                    </div>
+                    <div class="badge text-bg-success">Gratis</div>
+                    <div class="ir-mplay">Ir a Mercado Play</div>
+                </a>
+
+            </div>
+            <span class="col-sm-6">
+                <a href="#"><iframe class="video-promo" src="https://www.sensacine.com/" frameborder="0"></iframe></a>
+            </span>
+        </div>
+    </div>
+
+    <!--Seccion categorias-->
+    <div class="container categorias-container">
+        <div class="row justify-content-center">
+            <a class="cuadricula-categoria col-lg-5 col-sm-5" type="button">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="categoria-header">bricks</div>
+                        <div class="categoria-body">encuentra tus <br> legos favoritos</div>
+                        <button class="categoria-button">Ver más</button>
+                    </div>
+                    <div id="bricks" class="categoria-img col-lg-6 col-sm-6"></div>
+                </div>
+            </a>
+            <a class="cuadricula-categoria col-lg-5 col-sm-5" type="button">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="categoria-header">encuentra tus</div>
+                        <div class="categoria-body">skechers al <br> mejor precio</div>
+                        <button class="categoria-button">Ver más</button>
+                    </div>
+                    <div id="sneakers" class="categoria-img col-lg-6 col-sm-6"></div>
+                </div>
+            </a>
+        </div>
+        <div class="row justify-content-center">
+            <a class="cuadricula-categoria col-lg-5 col-sm-5" type="button">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="categoria-header">petking</div>
+                        <div class="categoria-body">todo para <br> tus mascotas</div>
+                        <button class="categoria-button">Ver más</button>
+                    </div>
+                    <div id="mascotas" class="categoria-img col-lg-6 col-sm-6"></div>
+                </div>
+            </a>
+            <a class="cuadricula-categoria col-lg-5 col-sm-5" type="button">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="categoria-header">ingresa a</div>
+                        <div class="categoria-body">la tienda <br> xiaomi ahora</div>
+                        <button class="categoria-button">Ver más</button>
+                    </div>
+                    <div id="xiaomi" class="categoria-img col-lg-6 col-sm-6"></div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="container-trio-categoria container">
+        <div class="row justify-content-center trio-categoria">
+            <div class="col-sm-12 col-lg-4">
+                <div>
+                    <a class="tarjeta-trio-categoria" href="#" type="button">
+                        <h5 class="titulo-trio-categoria">Mundo de juguetes</h5>
+                        <img class="img-trio-categoria"
+                            src="https://http2.mlstatic.com/D_NQ_684963-MLA84514877995_052025-OO.webp" alt="">
+                    </a>
+                    <div class="row seccion-mini-imagenes">
+                        <a href="#" id="juguete-1" class="col-sm-2 mini-imagenes"></a>
+                        <a href="#" id="juguete-2" class="col-sm-2 mini-imagenes"></a>
+                        <a href="#" id="juguete-3" class="col-sm-2 mini-imagenes"></a>
+                        <a href="#" id="juguete-4" class="col-sm-2 mini-imagenes"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-4">
+                <div>
+                    <a class="tarjeta-trio-categoria" href="#" type="button">
+                        <h5 class="titulo-trio-categoria">Ropa y calzado infantil</h5>
+                        <img class="img-trio-categoria"
+                            src="https://http2.mlstatic.com/D_NQ_893548-MLA84515431745_052025-OO.webp" alt="">
+                    </a>
+                    <div class="row seccion-mini-imagenes">
+                        <a href="#" id="zapato-1" class="col-sm-2 mini-imagenes"></a>
+                        <a href="#" id="zapato-2" class="col-sm-2 mini-imagenes"></a>
+                        <a href="#" id="zapato-3" class="col-sm-2 mini-imagenes"></a>
+                        <a href="#" id="zapato-4" class="col-sm-2 mini-imagenes"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-4">
+                <div>
+                    <a class="tarjeta-trio-categoria" href="#" type="button">
+                        <h5 class="titulo-trio-categoria">Mundo gaming</h5>
+                        <img class="img-trio-categoria"
+                            src="https://http2.mlstatic.com/D_NQ_975527-MLA84218750884_052025-OO.webp" alt="">
+                    </a>
+                    <div class="row seccion-mini-imagenes">
+                        <a href="#" id="periferico-1" class="col-sm-2 mini-imagenes"></a>
+                        <a href="#" id="periferico-2" class="col-sm-2 mini-imagenes"></a>
+                        <a href="#" id="periferico-3" class="col-sm-2 mini-imagenes"></a>
+                        <a href="#" id="periferico-4" class="col-sm-2 mini-imagenes"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Carrusel de categorias-->
+    <div class="container carrusel-categorias-container">
+        <h4 id="cc-titulo">Categorías<span><a id="cc-titulo-ancla" href="#">Mostrar todas las categorias</a></span></h4>
+        <div id="categoriasCarousel" class="carousel slide">
+            <div class="carousel-inner">
+                <!--Primera pantalla carrusel-->
+                <div class="carousel-item active">
+                    <div class="row d-flex w-100 justify-content-center">
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_car-front-new-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Autos, Motos y Otros</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_mobile-button-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Celulares y Telefonía</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_controller-2-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Consolas y videojuegos</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_settings-tool-67-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Herramientas <br><br></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex w-100 justify-content-center">
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_steering-wheel-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Accesorios para vehículos</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_tshirt-53-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Ropa y Accesorios</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_ball-soccer-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Deportes y Fitness</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_makeup-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Belleza y Cuidado Personal</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex w-100 justify-content-center">
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_armchair_blue-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Hogar y Muebles</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_tv-2-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Computación</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_building-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Inmuebles</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_audio-92-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Electrónica, Audio y Video</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Segunda pantalla carrusel-->
+                <div class="carousel-item">
+                    <div class="row d-flex w-100 justify-content-center">
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_tractor-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Agro</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_palette-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Arte y antigüedades</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_camera-20-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Cámaras y Accesorios</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_watch-circle-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Joyas y relojes</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex w-100 justify-content-center">
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_chef-hat-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Alimentos y Bebidas</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_baby-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Bebés</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_chair-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Industrias y Oficinas</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_bear-2-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Juegos y Juguetes</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex w-100 justify-content-center">
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_mascota-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Animales y Mascotas</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_factory-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Construcción</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_guitar-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Instrumentos Musicales</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_note-03-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Música, Libros y Películas</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Tercera pantalla carrusel-->
+                <div class="carousel-item">
+                    <div class="row d-flex w-100 justify-content-center">
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_camera-20-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Cámaras y Accesorios</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_watch-circle-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Joyas y relojes</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_baloon-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Recuerdos, Cotillón y Fiestas</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_tvs-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;"><br>Televisores</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex w-100 justify-content-center">
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_chair-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;"><br> Industrias y Oficinas</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_bear-2-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Juegos y Juguetes</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_hospital-34-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Equipamiento Médico y Salud</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_microsoft-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;"><br>Otras Categorías</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex w-100 justify-content-center">
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_guitar-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Instrumentos Musicales</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_note-03-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Música, Libros y Películas</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_multiple-11-category.webp"
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;">Servicios</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 cc-tarjeta-categoria">
+                            <div class="row">
+                                <a href="#" type="button" class="d-flex cc-ancla">
+                                    <div class="cc-seccion-imagen col-lg-5">
+                                        <img class="carrusel-categorias-imagen"
+                                            src=""
+                                            alt="">
+                                    </div>
+                                    <div class="col-lg-7" style="padding: 20px;"><br><br></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev cc-boton" type="button" data-bs-target="#categoriasCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" style="color: black;"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#categoriasCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="container-fluid container-footer">
+        <div class="row cf-divisiones">
+            <div class="col-lg-4 col-sm-4 cf-trio-tarjetas">
+                <img src="https://http2.mlstatic.com/storage/homes-korriban/assets/images/ecosystem/payment.svg" alt="">
+                <h5>Paga con Mercado Pago</h5>
+                <p>Usa Mercado Pago, la solución de Mercado Libre para pagar de forma segura y con el medio de pago que prefieras.</p>
+                <a href="#">Cómo pagar con Mercado Pago</a>
+            </div>
+            <div class="col-lg-4 col-sm-4 cf-trio-tarjetas">
+                <img src="https://http2.mlstatic.com/storage/homes-korriban/assets/images/ecosystem/shipping.svg" alt="">
+                <h5>Envío gratis desde US$ 20</h5>
+                <p>Con solo estar registrado en Mercado Libre, tienes envíos gratis en millones de productos seleccionados.</p>
+                <a href="#">Conoce más sobre este beneficio</a>
+            </div>
+            <div class="col-lg-4 col-sm-4 cf-trio-tarjetas">
+                <img src="https://http2.mlstatic.com/storage/homes-korriban/assets/images/ecosystem/protected.svg" alt="">
+                <h5>Seguridad, de principio a fin</h5>
+                <p>¿No te gusta? ¡Devolvelo! En Mercado Libre, no hay nada que no puedas hacer, porque estás siempre protegido.</p>
+                <a href="#">Cómo te protegemos</a>
+            </div>
+        </div>
+        
+        <div class="row cf-divisiones">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mas-acercaDe" aria-expanded="false" aria-controls="mas-acercaDe">
+                Más información
+                <span><img id="icono-flecha-abajo" src="./assets/images/flecha-icono.png" alt=""></span>
+            </button>
+        </div>
+        
+        <div class="cf-masInfo-banner container-fluid">
+            <div id="mas-acercaDe" class="row cf-divisiones accordion-collapse collapse">
+                <div class="cf-masInfo col-lg-2">
+                    <h6>Acerca de</h6>
+                    <a href="#">Mercado Libre</a><br>
+                    <a href="#">Investor relations</a>
+                    <a href="#">Sustentabilidad</a>
+                </div>
+                <div class="cf-masInfo col-lg-2">
+                    <h6>Otros sitios</h6>
+                    <a href="">Developers</a><br>
+                    <a href="">Mercado Ads</a>
+                </div>
+                <div id="cf-ayuda" class="cf-masInfo col-lg-4">
+                    <h6>Ayuda</h6>
+                    <a href="">Comprar</a><br>
+                    <a href="">Vender</a><br>
+                    <a href="">Resolución de problemas</a><br>
+                    <a href="">Centro de seguridad</a>
+                </div>
+                <div class="cf-masInfo col-lg-2">
+                    <h6>Redes sociales</h6>
+                    <a href="">X</a><br>
+                    <a href="">Facebook</a><br>
+                    <a href="">Youtube</a>
+                </div>
+                <div class="cf-masInfo col-lg-2">
+                    <h6>Mi cuenta</h6>
+                    <a href="">Ingresa</a><br>
+                    <a href="">Vender</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cf-divisiones cf-footer">
+            <a id="er-cf" href="#">Términos y condiciones</a>
+            <a href="#">Promociones</a>
+            <a href="#">Cómo cuidamos tu privacidad</a>
+            <a href="#">Accesibilidad</a>
+            <a href="#">Ayuda</a>
+            <footer>Copyright © 1999-2025 MercadoLibre Ecuador Cia. Ltda.</footer>
+        </div>
+        
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
