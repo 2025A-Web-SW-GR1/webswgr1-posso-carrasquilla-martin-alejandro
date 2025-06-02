@@ -1,29 +1,30 @@
 // Estamos en el LADO DEL SERVIDOR
 const fs = require('fs'); // importar la libreria fs
-console.log("Primero");
+//console.log("Primero");
 
-fs.readFile(
-    './a.txt',  //path
-    'utf8', //codificacion
-    (errorLectura, contenido) => { // callbacks
-        if(errorLectura){
-            console.error("ERROR lectura 1" );
+// fs.readFile(
+//     './a.txt',  //path
+//     'utf8', //codificacion
+//     (errorLectura, contenido) => { // callbacks
+//         if(errorLectura){
+//             console.error("ERROR lectura 1" );
+//         }else{
+//             console.log('TERCERO 1.1', contenido)
+//         }
+//     }
+// )
+
+fs.writeFile(
+    './a.txt', //path
+    'Hola! ' + new Date().toString(), //contenido
+    (errorEscritura) => { // callbacks
+        if(errorEscritura){
+            console.error("ERROR escritura" );
         }else{
-            console.log('TERCERO 1.1', contenido)
+            console.log('Archivo escrito')
         }
     }
+
 )
 
-fs.readFile(
-    './a.txt',  //path
-    'utf8', //codificacion
-    (errorLectura, contenido) => {
-        if(errorLectura){
-            console.error("ERROR lectura 1" );
-        }else{
-            console.log('TERCERO 1.2', contenido)
-        }
-    }
-)
-
-console.log("Segundo");
+//console.log("Segundo");
