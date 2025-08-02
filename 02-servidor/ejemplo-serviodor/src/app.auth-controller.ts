@@ -1,82 +1,45 @@
-import { Controller, Get, Session, Post, Body, Req, Request, Res, Query } from '@nestjs/common';
-import session from 'express-session';
+import { Controller, Get, Session, Post, Body, Req, Res, Query } from '@nestjs/common';
 import { CasaService } from './casa/casa.service';
 
 @Controller('auth')
 export class AuthController {
-    constructor(
-        private readonly casaService: CasaService
-    ) { }
-
-
+    constructor(private readonly casaService: CasaService) { }
 
     @Get('login-vista')
-    async loginVista(
-        @Res() res: any,
-        @Query() query: { mensaje?: string },
-    ) {
-        res.render('login', {
-            mensaje: query.mensaje ?? ''
-        });
+    loginVista(@Res() res: any, @Query() query: { mensaje?: string }) {
+        res.render('login', { mensaje: query.mensaje ?? '' });
     }
 
-    // LoginMetodo
     @Post('login')
     async login(
-        @Body() login: { username: string; password: string; rest: boolean; },
+        @Body() login: { username: string; password: string; rest?: boolean },
         @Session() session: Record<string, any>,
         @Res() res: any
-    ) { // Using @Session() decorator
-        try {
-            const respuesta = await this.casaService.buscarUnoPorUsername(login.username);
-            if (respuesta.password === login.password) {
-                session.user = {
-                    ...respuesta
-                };
-                if (login.rest) {
-                    return {
-                        mensaje: 'Usuario logeado exitosamente'
-                    };
-                }
-                res.redirect('/auth/sesion');
-            } else {
-                res.redirect('/auth/login-vista?mensaje=Usuario y password no coinciden');
-            }
-        } catch (e) {
-            console.error('No se encontro usuario');
-            res.redirect('/auth/login-vista?mensaje=Usuario no encontrado');
-        }
-    }
-
-    // Eliminar la sesion
-    @Get('logout')
-    logout(
-        @Req() req: any,
-        @Res() res: any
     ) {
-        req.session.destroy((err) => {
-            if (err) {
-                console.error('Error destroying session:', err);
+        try {
+            const usuario = await this.casaService.buscarUnoPorUsername(login.username);
+            if (usuario.password === login.password) {
+                session.user = usuario;
+                return res.redirect('/auth/casas');
             }
-        });
-        res.redirect('/auth/login-vista')
+            return res.redirect('/auth/login-vista?mensaje=Usuario y password no coinciden');
+        } catch {
+            return res.redirect('/auth/login-vista?mensaje=Usuario no encontrado');
+        }
     }
 
-    @Get('sesion')
-    async sesion(
-        @Res() res: any,
-        @Session() session: Record<string, any>
-    ) { // Using @Session() decorator
-        let casa: any = {};
-        if (session?.user?.username) {
-            try {
-                casa = await this.casaService.buscarUnoPorUsername(session.user.username);
-            } catch (e) {
-                console.error('No se encontro usuario');
-            }
+    @Get('logout')
+    logout(@Req() req: any, @Res() res: any) {
+        req.session.destroy(() => { });
+        res.redirect('/auth/login-vista');
+    }
+
+    @Get('casas')
+    async listarCasas(@Res() res: any, @Session() session: Record<string, any>) {
+        if (!session.user) {
+            return res.redirect('/auth/login-vista?mensaje=Debe iniciar sesión');
         }
-        res.render('sesion', {
-            casa,
-        });
+        const casas = await this.casaService.obtenerTodos();
+        res.render('casas', { casas });
     }
 }
